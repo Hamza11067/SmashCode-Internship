@@ -1,0 +1,289 @@
+html{
+    font-size: 62.5%;
+} 
+
+.wrapper{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+body{
+    margin: 0%;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*nav starts*/
+
+nav{
+    margin: 4em;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 4.1rem;
+    margin: 0;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav ul li a.active:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-bottom: 2.5px solid black;
+    bottom: -6px; 
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2.5px solid rgb(181, 180, 180);
+    bottom: -6px;
+    transition: width .3s;
+
+}
+
+nav ul li a:hover:before{
+    width: 100%;
+}
+
+/*main starts*/
+
+main{
+    display: flex;
+    gap: 8em;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+/*left-col starts*/
+
+.left-col{
+    width: 45%;
+}
+
+.right-col{
+    flex-grow: 1;
+}
+
+.left-col h1{
+    font-size: 4.2rem;
+    font-family: 'playfair Display';
+    font-weight: normal;
+    margin: 0;
+}
+
+.left-col p{
+    font-size: 1.8rem;
+}
+
+.details-1{
+    padding: 1em;
+}
+
+.cta-btns{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    margin: 3em 0;
+}
+
+.primary-cta{
+    background-color: #F2F0DF;
+    font-size: 1.8rem;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 1.9rem;
+    padding: .6em 1.2em;
+    transition: .1s;
+}
+
+.primary-cta:hover{
+    background-color: #EDE7B2;
+}
+
+.secondary-cta{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    transition: .1s;
+}
+
+.secondary-cta:hover{
+    text-decoration: underline;
+}
+
+.secondary-cta svg{
+    transition: transform .3s;
+}
+
+.secondary-cta:hover svg{
+    transform: translateX(10px);
+}
+
+.news{
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    margin-top: 5rem;
+    padding: 3em;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    position: relative;
+}
+
+.news :before{
+    position: absolute;
+    content: "";
+    background-image: url('images/Vector.svg');
+    height: 100px;
+    width: 100px;
+    top: -20px;
+    left: -15px;
+    background-repeat: no-repeat ;
+}
+
+.news .employes{
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.news .detailes{
+    font-size: 1.5rem;
+}
+
+/*right col starts*/
+
+.right-col{
+    display: grid;
+    gap: 2.3rem;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas: 
+       "left right"
+       "left bottom"
+    ;
+}
+
+.card{
+    border-radius: 2rem;
+    display: flex;
+    align-items: end;
+    padding: 1.1rem;
+    background-size: 110%;
+    transition: .8s;
+}
+
+
+.card:hover{
+    background-size: 120%;
+    transform: translateY(-5px);
+}
+
+.card1{
+    grid-area: left;
+    background-image: url('images/clothing1.png');
+    position: relative;
+}
+
+
+.card1 :before{
+    position: absolute;
+    content: "";
+    background: url('images/tag.img.svg') no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 1%;
+    left: -30%;
+    pointer-events: none;
+
+}
+
+.card2{
+    background-image: url('images/clothing2.png');
+}
+
+.card3{
+    background-image: url('images/clothing3.png');
+}
+
+.card-detailes{
+    background-color: white;
+    width: 100%;
+    border-radius: .8rem;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-detailes a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.card-detailes p{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+p.product-price{
+    font-size: 1.8rem;
+}
+
+/*Reveal Animation*/
+
+.overlay {
+    position: absolute;
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal{
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+} 
+
+main{
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes growIn{
+    from{
+        transform: scale(0.4);
+    }
+    to{
+        transform: scale(1);
+    }
+}
